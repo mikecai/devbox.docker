@@ -53,17 +53,15 @@ EXPOSE 5901
 RUN sed -i '0,/port=-1/{s/port=-1/port=5901/}' /etc/xrdp/xrdp.ini
 
 # Add desktop icons for lxterminal, firefox, and notepadqq
-COPY *.desktop /$USER/Desktop/
+COPY ./Desktop /$USER/Desktop
 RUN chmod 664 ~/Desktop/*.desktop
 
 # Modify lxterminal app for correct execution
-COPY lxterminal.desktop.exec /usr/share/applications/lxterminal.desktop
-RUN chmod 644 /usr/share/applications/lxterminal.desktop
+COPY /usr/share/applications/ /usr/share/applications/
+RUN chmod 644 /usr/share/applications/
 
 # Add custom configs for some apps
-COPY lxterminal.conf /$USER/.config/lxterminal/
-COPY panel /$USER/.config/lxpanel/LXDE/panels/
-COPY desktop-items-0.conf /$USER/.config/pcmanfm/LXDE/
+COPY ./.config /$USER/.config/
 RUN chmod -R 700 ~/.config/
 RUN chmod 664 ~/.config/lxterminal/lxterminal.conf
 RUN chmod 664 ~/.config/lxpanel/LXDE/panels/panel
