@@ -1,5 +1,5 @@
 #Start with Ubuntu 16.04 base image
-FROM apcai/devbox-lxde:16.04
+FROM apcai/devbox-lxde:ubuntu-16.04
 
 MAINTAINER Anping Cai (Mike) <anpingcai@gmail.com>
 
