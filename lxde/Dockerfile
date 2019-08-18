@@ -11,5 +11,5 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get autoremove && \
     DEBIAN_FRONTEND=noninteractive apt-get clean
 
-CMD ["tail", "-f /dev/null"]
+CMD tail -f /dev/null
 
